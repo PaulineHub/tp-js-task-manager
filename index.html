@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">        
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>TODO</title>
+  <link href="css/todo.css?v=1.01" rel="stylesheet">
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>    
+        
+  <template id="modeleListe">
+    <div class="l">
+      <div class="c tache" data-id="{id}" data-isdone="{isDone}" data-priority="{priority}">
+        {name} ({priority})
+      </div>
+      <div class="c" data-id={id}>
+        <span class="detail">détail</span>&nbsp;&nbsp;
+        <span class="effacer">effacer</span>
+      </div>
+    </div>
+  </template>
+    
+  <template id="modeleDetail">
+    <section>
+      <h2>Détails de la tâche</h2>
+      <p><span>Numéro:</span>           {id}</p>
+      <p><span>Nom:</span>              {name}</p>
+      <p><span>Importance:</span>       {priority}</p>
+      <p><span>Faite:</span>            {isDone}</p>
+      <p><span>Date de création:</span> {date}</p>
+      <button onclick="document.getElementById('modale').close()">Fermer</button>
+    </section>
+  </template>
+    
+  <header>
+    <h1>Gestionnaire de tâches</h1>
+  </header>
+  <main>
+
+    <form name="frm1" id="frm1">
+      <label>Nouvelle tâche:</label>
+      <input type="text" name="tache">
+      <select name="importance">
+        <option value="1">Haute (1)</option>
+        <option value="2" selected>Moyenne (2)</option>
+        <option value="3">Basse (3)</option>
+      </select>
+      <button type="submit" name="ajouter">Ajouter</button>
+      <span id="msgErr"></span>
+    </form>
+
+    <form name="frm2" class="tri">
+      <label>Tri par:</label>
+      <select name="tri">
+        <option value="nom/importance" selected>Nom/Importance</option>
+        <option value="importance/nom">Importance/Nom</option>
+      </select>
+    </form>
+
+    <div id="listeTaches"></div>
+
+    <dialog id="modale"></dialog>
+
+  </main>
+</body>
+</html>
