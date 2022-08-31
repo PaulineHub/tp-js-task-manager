@@ -1,5 +1,9 @@
 # tp-js-task-manager
-javascript project, task manager with local storage
+Javascript project, task manager with local storage.
+Assignment for Javascript course in College Maisonneuve for AEC Web Developement.
 
-## Goal
+### Github Page
+https://paulinehub.github.io/tp-js-task-manager/
+
+### Goal
 To create a task manager in javascript with specific fonctionalities.
